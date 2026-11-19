@@ -37,18 +37,26 @@ kitten themes
 
 ## Keymaps
 
-The split prefix is `Alt+C`.
+The prefix is `Alt+C`.
 
 | Keys | Action |
 | --- | --- |
 | `Alt+C` `Shift+2` / `Shift+5` | Split horizontally / vertically in the current directory |
 | `Alt+C` `Up` / `Down` | Focus the window above / below |
+| `Alt+C` `X` | Copy mode: browse the screen and scrollback in Neovim |
 | `Ctrl+T` | New tab |
 | `Alt+1` to `Alt+8` | Go to tab 1 to 8 |
 | `Ctrl+Shift+Alt+T` | Rename the tab |
 | `Ctrl+Shift+Alt+N` | Move the tab into a new window |
 | `Ctrl+C` | Copy the selection; with none, send `Ctrl+C` to the program |
 | `Ctrl+V` | Paste text; with an image on the clipboard, send `Ctrl+V` to the program |
+
+Copy mode uses [kitty-scrollback.nvim](https://github.com/mikesmithgh/kitty-scrollback.nvim), installed
+through the Neovim configuration. Move the cursor with the arrow keys, press `v` to select, then
+`y` or `Ctrl+C` to copy the selection to the system clipboard and return to kitty. `Y` copies to the end
+of the line. `q` leaves without copying.
+It needs `allow_remote_control socket-only` and `listen_on`, set in `kitty.conf`; restart kitty after
+changing them.
 
 `Ctrl+Shift+V` is unbound. Programs such as Claude Code read a clipboard image themselves when they
 receive `Ctrl+V`, which is why `paste_or_forward.py` forwards the key.
