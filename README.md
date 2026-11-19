@@ -26,6 +26,7 @@ Move an existing `~/.config/kitty` aside first. kitty reads the configuration on
 | `kitty.conf` | Settings and keymaps. Unchanged defaults stay commented out. |
 | `current-theme.conf` | The active colour theme, written by `kitten themes`. |
 | `themes/` | Heritage themes, listed by `kitten themes`. |
+| `tab_bar.py` | Tab bar drawing that colours tabs from the active theme. |
 | `paste_or_forward.py` | Kitten bound to `Ctrl+V`. |
 
 Choose a theme with:
@@ -60,4 +61,5 @@ receive `Ctrl+V`, which is why `paste_or_forward.py` forwards the key.
 | Layout | `splits` only |
 | Cursor | Underline |
 | Tab bar | Top edge, titled `<index>: <title>` |
+| Active tab | A theme colour that stands out from the background, set by `tab_bar.py` |
 | Window decorations | Hidden |
